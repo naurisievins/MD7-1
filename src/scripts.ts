@@ -26,7 +26,8 @@ const randomColor = (x: string[]) => {
   return res;
 };
 
-let interval:NodeJS.Timeout;
+let intervalBox5:NodeJS.Timeout;
+let intervalBox6:NodeJS.Timeout;
 const startCounter = (x:number, y:HTMLElement) => {
   let counter = 1;
   y.innerHTML = String(counter);
@@ -36,7 +37,11 @@ const startCounter = (x:number, y:HTMLElement) => {
       y.innerHTML = String(counter);
     }
   };
-  interval = setInterval(count, x);
+  if (y === box5) {
+    intervalBox5 = setInterval(count, x);
+  } else if (y === box6) {
+    intervalBox6 = setInterval(count, x);
+  }
 };
 
 btn1?.addEventListener('click', () => {
@@ -80,10 +85,11 @@ box5?.addEventListener('mouseover', () => {
 
 box5?.addEventListener('mouseout', () => {
   box5.innerHTML = '0';
-  clearInterval(interval);
+  clearInterval(intervalBox5);
 });
 
 btn6?.addEventListener('click', () => {
+  clearInterval(intervalBox6);
   startCounter(3000, box6);
 });
 
