@@ -1,3 +1,77 @@
+@import "reset.scss"; /* Import reset.css */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap'); /* Google fonts */
+
 body {
-  background-color: antiquewhite;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  padding:50px 40px;
+}
+
+.row {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+.row--btn {
+  column-gap:30px;
+  row-gap:15px;
+}
+
+.row--box {
+  padding:55px 0;
+  column-gap:110px;
+  row-gap:90px;
+}
+
+.row--input {
+  padding:25px 0;
+}
+
+.btn {
+  padding:20px 40px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-size:20px;
+  color:white;
+  border-radius: 8px;
+  &:hover {
+    opacity:0.8;
+  }
+  &__1 {
+    background-color:#017187;
+  }
+  &__2 {
+    background-color:#5C0187B5;
+  }
+  &__3 {
+    background-color:#8711018F;
+  }
+  &__4 {
+    background-color:#01870EA1;
+  }
+  &__5 {
+    background-color:#E2CF22;
+  }
+  &__6 {
+    background-color:#011E87;
+  }
+  &__7 {
+    background-color:#18D5E1;
+  }
+}
+
+.box {
+  min-width:300px;
+  min-height:300px;
+  color:black;
+  font-size: 56px;
+  background-color: #1FC2AE;
+  text-align:center;
+  line-height:300px;
 }
