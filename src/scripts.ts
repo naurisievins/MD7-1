@@ -26,21 +26,32 @@ const randomColor = (x: string[]) => {
   return res;
 };
 
-const startCounter = () => {
+let interval:NodeJS.Timeout;
+const startCounter = (x:number, y:HTMLElement) => {
   let counter = 1;
-  box6.innerHTML = String(counter);
-
+  y.innerHTML = String(counter);
   const count = () => {
     if (counter < 10) {
       counter++;
-      box6.innerHTML = String(counter);
+      y.innerHTML = String(counter);
     }
   };
-  setInterval(count, 3000);
+  interval = setInterval(count, x);
 };
 
 btn1?.addEventListener('click', () => {
   box1.style.backgroundColor = '#E2CF22';
+});
+
+let box1CurrentColor:string;
+
+box1?.addEventListener('mouseover', () => {
+  box1CurrentColor = box1.style.backgroundColor;
+  box1.style.backgroundColor = 'red';
+});
+
+box1?.addEventListener('mouseout', () => {
+  box1.style.backgroundColor = box1CurrentColor;
 });
 
 btn2?.addEventListener('click', () => {
@@ -63,7 +74,18 @@ btn5?.addEventListener('click', () => {
   box5.style.backgroundColor = randomColor(colors);
 });
 
-btn6?.addEventListener('click', startCounter);
+box5?.addEventListener('mouseover', () => {
+  startCounter(1000, box5);
+});
+
+box5?.addEventListener('mouseout', () => {
+  box5.innerHTML = '0';
+  clearInterval(interval);
+});
+
+btn6?.addEventListener('click', () => {
+  startCounter(3000, box6);
+});
 
 btn7?.addEventListener('click', () => {
   allBoxes.forEach(box => {
