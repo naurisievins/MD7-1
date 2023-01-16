@@ -1,22 +1,22 @@
-const btn1 = document.querySelector<HTMLElement>('.btn__1');
-const btn2 = document.querySelector<HTMLElement>('.btn__2');
-const btn3 = document.querySelector<HTMLElement>('.btn__3');
-const btn4 = document.querySelector<HTMLElement>('.btn__4');
-const btn5 = document.querySelector<HTMLElement>('.btn__5');
-const btn6 = document.querySelector<HTMLElement>('.btn__6');
-const btn7 = document.querySelector<HTMLElement>('.btn__7');
+const btn2 = document.querySelector<HTMLButtonElement | null>('.btn__2');
+const btn1 = document.querySelector<HTMLButtonElement | null>('.btn__1');
+const btn3 = document.querySelector<HTMLButtonElement | null>('.btn__3');
+const btn4 = document.querySelector<HTMLButtonElement | null>('.btn__4');
+const btn5 = document.querySelector<HTMLButtonElement | null>('.btn__5');
+const btn6 = document.querySelector<HTMLButtonElement | null>('.btn__6');
+const btn7 = document.querySelector<HTMLButtonElement | null>('.btn__7');
 
-const box1 = document.querySelector<HTMLElement>('.box__1');
-const box2 = document.querySelector<HTMLElement>('.box__2 .change_text');
-const box3 = document.querySelector<HTMLElement>('.box__3');
-const box4 = document.querySelector<HTMLElement>('.box__4');
-const box5 = document.querySelector<HTMLElement>('.box__5');
-const box6 = document.querySelector<HTMLElement>('.box__6');
-const allBoxes = document.querySelectorAll<HTMLElement>('.box');
+const box1 = document.querySelector<HTMLDivElement | null>('.box__1');
+const box2 = document.querySelector<HTMLDivElement | null>('.box__2 .change_text');
+const box3 = document.querySelector<HTMLDivElement | null>('.box__3');
+const box4 = document.querySelector<HTMLDivElement | null>('.box__4');
+const box5 = document.querySelector<HTMLDivElement | null>('.box__5');
+const box6 = document.querySelector<HTMLDivElement | null>('.box__6');
+const allBoxes = document.querySelectorAll<HTMLDivElement | null>('.box');
 
-const output = document.querySelector<HTMLElement>('.output');
-const inputField = document.querySelector<HTMLInputElement>('.input_field');
-const body = document.querySelector<HTMLInputElement>('body');
+const output = document.querySelector<HTMLSpanElement | null>('.output');
+const inputField = document.querySelector<HTMLInputElement | null>('.input_field');
+const body = document.querySelector<HTMLBodyElement | null>('body');
 
 const colors: string[] = ['#0d1c03', '#2c401b', '#586f31', '#94a84b', '#e2ea69'];
 
